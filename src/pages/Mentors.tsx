@@ -1,4 +1,4 @@
-import { GraduationCap, Trophy, FlaskConical, BookOpen, Users } from "lucide-react";
+import { GraduationCap, Trophy, Award, FileText, Users } from "lucide-react";
 import Layout from "@/components/Layout";
 
 interface Accomplishment {
@@ -20,8 +20,8 @@ const mentors: MentorData[] = [
     accomplishments: [
       { icon: GraduationCap, text: "Taken Ga Tech & Harvard Comp Sci" },
       { icon: Trophy, text: "State Champion for Programming" },
-      { icon: FlaskConical, text: "Research at Stanford & Space Labs" },
-      { icon: BookOpen, text: "Max score on National AP CS Exam" },
+      { icon: Award, text: "Research at Stanford & Space Labs" },
+      { icon: FileText, text: "Max score on National AP CS Exam" },
       { icon: Users, text: "Helped lead club with 500+ members" },
     ],
     hasPhoto: true,
@@ -30,13 +30,13 @@ const mentors: MentorData[] = [
     name: "Ram Singh",
     role: "Co-Founder",
     accomplishments: [
-      { icon: GraduationCap, text: "" },
-      { icon: Trophy, text: "" },
-      { icon: FlaskConical, text: "" },
-      { icon: BookOpen, text: "" },
-      { icon: Users, text: "" },
+      { icon: GraduationCap, text: "Taken Ga Tech & Harvard Comp Sci" },
+      { icon: Trophy, text: "4.67 Comp Sci Subject GPA" },
+      { icon: Award, text: "CollegeBoard recognized ambassador" },
+      { icon: FileText, text: "CS Blog founder & writer" },
+      { icon: Users, text: "Help lead club with 500+ members" },
     ],
-    hasPhoto: false,
+    hasPhoto: true,
   },
 ];
 

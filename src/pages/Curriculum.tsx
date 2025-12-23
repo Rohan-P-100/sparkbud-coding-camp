@@ -39,60 +39,6 @@ const weeklyContent = [
   },
 ];
 
-const CodeBlock = () => (
-  <div className="bg-code-bg rounded-2xl overflow-hidden shadow-card border border-foreground/10">
-    {/* Window header */}
-    <div className="flex items-center gap-2 px-4 py-3 bg-foreground/5 border-b border-foreground/10">
-      <div className="w-3 h-3 rounded-full bg-destructive/80" />
-      <div className="w-3 h-3 rounded-full bg-spark-orange" />
-      <div className="w-3 h-3 rounded-full bg-spark-green" />
-      <span className="ml-4 text-code-comment text-sm font-mono">program_details.json</span>
-    </div>
-    
-    {/* Code content */}
-    <div className="p-6 font-mono text-sm md:text-base overflow-x-auto">
-      <div className="text-code-comment">// SparkBud Program Details</div>
-      <div className="mt-4 text-code-text">{"{"}</div>
-      <div className="ml-4">
-        <span className="text-code-property">"program"</span>
-        <span className="text-code-text">: </span>
-        <span className="text-code-string">"SparkBud Coding Camp"</span>
-        <span className="text-code-text">,</span>
-      </div>
-      <div className="ml-4">
-        <span className="text-code-property">"duration"</span>
-        <span className="text-code-text">: </span>
-        <span className="text-code-string">"5 weeks"</span>
-        <span className="text-code-text">,</span>
-      </div>
-      <div className="ml-4">
-        <span className="text-code-property">"cost"</span>
-        <span className="text-code-text">: </span>
-        <span className="text-code-string">"FREE"</span>
-        <span className="text-code-text">,</span>
-      </div>
-      <div className="ml-4">
-        <span className="text-code-property">"format"</span>
-        <span className="text-code-text">: </span>
-        <span className="text-code-string">"In-Person"</span>
-        <span className="text-code-text">,</span>
-      </div>
-      <div className="ml-4 mt-2">
-        <span className="text-code-property">"location"</span>
-        <span className="text-code-text">: </span>
-        <span className="text-code-string">"Sharon Forks Library"</span>
-        <span className="text-code-text">,</span>
-      </div>
-      <div className="ml-4">
-        <span className="text-code-property">"status"</span>
-        <span className="text-code-text">: </span>
-        <span className="text-spark-green font-semibold">"registration_open"</span>
-      </div>
-      <div className="text-code-text">{"}"}</div>
-    </div>
-  </div>
-);
-
 const TimelineWeek = ({ 
   week, 
   title, 
@@ -173,15 +119,6 @@ const Curriculum = () => {
               A carefully designed 5-week journey that takes you from complete beginner 
               to confident coder—growing your skills step by step.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Program Details Code Block */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
-            <CodeBlock />
           </div>
         </div>
       </section>
