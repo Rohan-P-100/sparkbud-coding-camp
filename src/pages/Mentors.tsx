@@ -117,8 +117,7 @@ const Mentors = () => {
               Your <span className="text-spark-green">Mentors</span>
             </h1>
             <p className="text-lg text-muted-foreground">
-              Learn from passionate educators and industry professionals who are dedicated 
-              to helping you succeed in your coding journey.
+              Learn from passionate students who were once in your shoes. Work with mentors who are there for your success.
             </p>
           </div>
         </div>
@@ -132,24 +131,6 @@ const Mentors = () => {
               <MentorCard key={index} mentor={mentor} />
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Join CTA */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-            Want to become a mentor?
-          </h2>
-          <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-            We're always looking for passionate individuals to help guide the next generation of programmers.
-          </p>
-          <a
-            href="mailto:contact@sparkbud.org"
-            className="inline-flex items-center gap-2 bg-spark-green text-primary-foreground px-6 py-3 rounded-full font-bold shadow-card hover:shadow-glow-green transition-all duration-300 hover:scale-105"
-          >
-            Get in Touch
-          </a>
         </div>
       </section>
     </Layout>
