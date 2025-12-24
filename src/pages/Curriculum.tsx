@@ -1,41 +1,42 @@
-import { Code, Sprout, Leaf, TreeDeciduous, Trees } from "lucide-react";
+import { Code, Sprout, Leaf, TreeDeciduous, Trees, Medal } from "lucide-react";
 import Layout from "@/components/Layout";
 
 const weeklyContent = [
   {
     week: 1,
-    title: "Planting the Seed",
+    title: "Planting the Seed - Intro to Scratch",
     icon: Sprout,
-    description: "Introduction to programming concepts, setting up your environment, and writing your first lines of code.",
-    topics: ["What is code?", "Python basics", "Variables & data types"],
+    description: "Learn all about the logic behind programming in one of the most engaging environments! Figure out how to create animations, sprites, and simple games!",
+    topics: ["Scratch", "Games", "Animations"],
   },
   {
     week: 2,
-    title: "Growing Roots",
+    title: "Growing Roots - Intro to Python",
     icon: Leaf,
-    description: "Building a strong foundation with control flow, loops, and understanding how programs make decisions.",
-    topics: ["If/else statements", "Loops (for, while)", "Simple projects"],
+    description: "Unleash the boundless possibilities with Python code! Learn the basics of one of the world's most popular coding languages - and trust us, there's a good reason it's so well liked.",
+    topics: ["Variables", "Data types", "Printing"],
   },
   {
     week: 3,
-    title: "Branching Out",
+    title: "Branching Out - Delve Deeper into Python",
     icon: TreeDeciduous,
-    description: "Learning about functions, organization, and how to write reusable, clean code.",
-    topics: ["Functions", "Parameters & returns", "Code organization"],
+    description: "Learn about more advanced topics like control structures, which enable the computer to make decisions! Explore new functions, and see how they can improve your code.",
+    topics: ["Loops", "Conditionals", "Functions"],
   },
   {
     week: 4,
-    title: "Bearing Fruit",
+    title: "Bearing Fruit - Wrapping up with Python",
     icon: Trees,
-    description: "Working with data structures and building more complex, interactive programs.",
-    topics: ["Lists & dictionaries", "File handling", "Mini-projects"],
+    description: "Use what you've learned about Python to recreate your favorite games, apps, and programs! Work directly with the mentors to build a personal CS plan moving forward.",
+    topics: ["Advanced Python", "Applications", "Future Plans"],
   },
   {
     week: 5,
-    title: "Full Bloom",
-    icon: Trees,
-    description: "Putting it all together with a capstone project and presenting your work!",
-    topics: ["Capstone project", "Code review", "Showcase & celebration"],
+    title: "Full Bloom - Mini Hackathon & Celebration",
+    icon: Medal,
+    description: "Using everything from the course, students will form groups to design, build, and present a project! Beyond learning programming, this experience will prepare students for competitive experiences moving forward - but in a safe, learning oriented environment. Don't miss out on the certificate ceremony and celebration!",
+    topics: ["Teamwork", "Showcase", "Celebration"],
+    isHighlighted: true,
   },
 ];
 
@@ -45,7 +46,8 @@ const TimelineWeek = ({
   icon: Icon, 
   description, 
   topics,
-  isLast 
+  isLast,
+  isHighlighted = false
 }: { 
   week: number; 
   title: string; 
@@ -53,12 +55,17 @@ const TimelineWeek = ({
   description: string; 
   topics: string[];
   isLast: boolean;
+  isHighlighted?: boolean;
 }) => (
   <div className="relative flex gap-6">
     {/* Timeline line and node */}
     <div className="flex flex-col items-center">
       <div className={`w-14 h-14 rounded-2xl flex items-center justify-center z-10 shadow-soft transition-all duration-300 hover:scale-110 ${
-        week % 2 === 1 ? "bg-spark-orange text-primary-foreground" : "bg-spark-green text-primary-foreground"
+        isHighlighted 
+          ? "bg-gradient-to-br from-spark-orange to-spark-green text-primary-foreground shadow-glow-orange" 
+          : week % 2 === 1 
+            ? "bg-spark-orange text-primary-foreground" 
+            : "bg-spark-green text-primary-foreground"
       }`}>
         <Icon size={24} />
       </div>
@@ -69,25 +76,40 @@ const TimelineWeek = ({
     
     {/* Content card */}
     <div className="flex-1 pb-8">
-      <div className={`bg-card rounded-2xl p-6 shadow-card border-2 transition-all duration-300 hover:shadow-xl ${
-        week % 2 === 1 ? "border-spark-orange/20 hover:border-spark-orange/40" : "border-spark-green/20 hover:border-spark-green/40"
+      <div className={`rounded-2xl p-6 shadow-card border-2 transition-all duration-300 hover:shadow-xl ${
+        isHighlighted 
+          ? "bg-gradient-to-br from-spark-orange/10 via-card to-spark-green/10 border-spark-orange/40 hover:border-spark-orange/60 ring-2 ring-spark-orange/20" 
+          : week % 2 === 1 
+            ? "bg-card border-spark-orange/20 hover:border-spark-orange/40" 
+            : "bg-card border-spark-green/20 hover:border-spark-green/40"
       }`}>
-        <div className="flex items-center gap-3 mb-3">
+        <div className="flex items-center gap-3 mb-3 flex-wrap">
           <span className={`px-3 py-1 rounded-full text-sm font-bold ${
-            week % 2 === 1 
-              ? "bg-spark-orange/10 text-spark-orange" 
-              : "bg-spark-green/10 text-spark-green"
+            isHighlighted 
+              ? "bg-gradient-to-r from-spark-orange to-spark-green text-primary-foreground" 
+              : week % 2 === 1 
+                ? "bg-spark-orange/10 text-spark-orange" 
+                : "bg-spark-green/10 text-spark-green"
           }`}>
             Week {week}
           </span>
-          <h3 className="text-xl font-bold text-foreground">{title}</h3>
+          {isHighlighted && (
+            <span className="px-3 py-1 rounded-full text-sm font-bold bg-spark-green/10 text-spark-green animate-pulse-gentle">
+              🎉 Grand Finale
+            </span>
+          )}
         </div>
+        <h3 className="text-xl font-bold text-foreground mb-3">{title}</h3>
         <p className="text-muted-foreground mb-4">{description}</p>
         <div className="flex flex-wrap gap-2">
           {topics.map((topic, index) => (
             <span 
               key={index}
-              className="px-3 py-1.5 bg-muted rounded-lg text-sm font-medium text-foreground/80"
+              className={`px-3 py-1.5 rounded-lg text-sm font-medium ${
+                isHighlighted 
+                  ? "bg-spark-orange/15 text-spark-orange border border-spark-orange/30" 
+                  : "bg-muted text-foreground/80"
+              }`}
             >
               {topic}
             </span>

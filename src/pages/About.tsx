@@ -1,4 +1,4 @@
-import { Users, Code, Calendar, Award, Sparkles, Heart, Target, Lightbulb } from "lucide-react";
+import { Users, Hammer, Sparkles, Target, GraduationCap } from "lucide-react";
 import Layout from "@/components/Layout";
 import sparkbudLogo from "@/assets/sparkbud-logo.png";
 
@@ -6,27 +6,27 @@ const REGISTER_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfoHSxSqCniAzzLhS
 
 const infoBoxes = [
   {
-    icon: Calendar,
-    title: "5 Weeks",
-    description: "Intensive hands-on learning experience",
+    icon: GraduationCap,
+    title: "Student Mentors",
+    description: "Designed for students, by students",
     color: "orange" as const,
   },
   {
-    icon: Code,
-    title: "100% Free",
-    description: "No cost to participate—ever",
+    icon: Hammer,
+    title: "Project Based",
+    description: "Learn by doing, not memorizing",
     color: "green" as const,
   },
   {
     icon: Users,
-    title: "In-Person",
-    description: "Learn together at Sharon Forks Library",
+    title: "Beginner Friendly",
+    description: "Open to all skill levels, no experience required",
     color: "orange" as const,
   },
   {
-    icon: Award,
-    title: "Real Skills",
-    description: "Build projects you can show off",
+    icon: Sparkles,
+    title: "Discover your Spark",
+    description: "Find what excites you in CS, and learn how you can pursue it",
     color: "green" as const,
   },
 ];
@@ -195,7 +195,7 @@ const About = () => {
       {/* Mission Statement */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="relative bg-gradient-to-br from-spark-green/5 to-spark-orange/5 rounded-3xl p-8 md:p-12 border-2 border-spark-green/20 shadow-card overflow-hidden">
               {/* Decorative elements */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-spark-green/10 rounded-full -translate-y-1/2 translate-x-1/2" />
@@ -209,26 +209,11 @@ const About = () => {
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">Our Mission</h2>
                 </div>
                 
-                <p className="text-lg md:text-xl text-foreground/80 leading-relaxed mb-6">
+                <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
                   <span className="font-bold text-spark-green">SparkBud</span> believes every student deserves the opportunity to explore computer science, 
                   regardless of their background or resources. We're dedicated to breaking down barriers and creating 
                   an inclusive, supportive environment where young minds can discover their potential in tech.
                 </p>
-                
-                <div className="flex flex-wrap gap-4">
-                  <div className="inline-flex items-center gap-2 bg-card px-4 py-2 rounded-full border border-spark-green/30">
-                    <Heart className="text-spark-orange" size={18} />
-                    <span className="font-semibold text-foreground/80">Nonprofit Driven</span>
-                  </div>
-                  <div className="inline-flex items-center gap-2 bg-card px-4 py-2 rounded-full border border-spark-green/30">
-                    <Lightbulb className="text-spark-green" size={18} />
-                    <span className="font-semibold text-foreground/80">Beginner Friendly</span>
-                  </div>
-                  <div className="inline-flex items-center gap-2 bg-card px-4 py-2 rounded-full border border-spark-green/30">
-                    <Users className="text-spark-orange" size={18} />
-                    <span className="font-semibold text-foreground/80">Community Focused</span>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

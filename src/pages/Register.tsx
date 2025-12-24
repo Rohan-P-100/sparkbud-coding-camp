@@ -1,4 +1,4 @@
-import { ClipboardList, Calendar, MapPin, Clock, ArrowRight, Video, Sparkles } from "lucide-react";
+import { ClipboardList, Calendar, MapPin, Clock, ArrowRight, Video, Sparkles, AlertCircle } from "lucide-react";
 import Layout from "@/components/Layout";
 
 const REGISTER_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfoHSxSqCniAzzLhSTvnN3pSe46phWd79G84W-zrNEIQMdPMw/viewform?usp=header";
@@ -88,7 +88,7 @@ const Register = () => {
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <div className="bg-card rounded-3xl p-8 md:p-10 shadow-card border border-spark-orange/20">
+            <div className="bg-card rounded-3xl p-8 md:p-10 shadow-card border-2 border-spark-orange/30">
               <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
                 <div className="w-20 h-20 bg-spark-orange/10 rounded-2xl flex items-center justify-center flex-shrink-0">
                   <Video className="text-spark-orange" size={36} />
@@ -111,10 +111,20 @@ const Register = () => {
                 </div>
               </div>
               
+              {/* Important notice */}
               <div className="mt-6 pt-6 border-t border-border">
-                <p className="text-center text-muted-foreground text-sm">
-                  Check back soon for the meeting date and time, or register now and we'll send you all the details!
-                </p>
+                <div className="bg-spark-orange/10 border-2 border-spark-orange/30 rounded-xl p-4 flex items-start gap-3">
+                  <AlertCircle className="text-spark-orange flex-shrink-0 mt-0.5" size={24} />
+                  <div>
+                    <p className="font-bold text-foreground mb-1">
+                      Important: Registration Required!
+                    </p>
+                    <p className="text-muted-foreground text-sm">
+                      To receive access to the interest meeting, you <span className="font-bold text-spark-orange">MUST</span> fill out the registration form above first. 
+                      We'll send you the meeting details via email after you register!
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -131,7 +141,7 @@ const Register = () => {
             We're here to help! Reach out to us anytime.
           </p>
           <a
-            href="mailto:contact@sparkbud.org"
+            href="mailto:sparkbudteam@gmail.com"
             className="inline-flex items-center gap-2 bg-spark-green text-primary-foreground px-6 py-3 rounded-full font-bold shadow-card hover:shadow-glow-green transition-all duration-300 hover:scale-105"
           >
             Contact Us
