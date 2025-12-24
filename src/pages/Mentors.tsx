@@ -1,5 +1,7 @@
 import { GraduationCap, Trophy, Award, FileText, Users } from "lucide-react";
 import Layout from "@/components/Layout";
+import rohanHeadshot from "@/assets/rohan-headshot.png";
+import ramHeadshot from "@/assets/ram-headshot.png";
 
 interface Accomplishment {
   icon: typeof GraduationCap;
@@ -10,7 +12,7 @@ interface MentorData {
   name: string;
   role: string;
   accomplishments: Accomplishment[];
-  hasPhoto: boolean;
+  photo: string;
 }
 
 const mentors: MentorData[] = [
@@ -24,7 +26,7 @@ const mentors: MentorData[] = [
       { icon: FileText, text: "Max score on National AP CS Exam" },
       { icon: Users, text: "Helped lead club with 500+ members" },
     ],
-    hasPhoto: true,
+    photo: rohanHeadshot,
   },
   {
     name: "Ram Singh",
@@ -36,7 +38,7 @@ const mentors: MentorData[] = [
       { icon: FileText, text: "CS Blog founder & writer" },
       { icon: Users, text: "Help lead club with 500+ members" },
     ],
-    hasPhoto: true,
+    photo: ramHeadshot,
   },
 ];
 
@@ -47,40 +49,24 @@ const AccomplishmentBox = ({
   icon: typeof GraduationCap; 
   text: string;
 }) => (
-  <div className={`flex items-center gap-4 p-3 rounded-xl border-2 transition-all duration-300 ${
-    text 
-      ? "bg-card border-spark-green/30 hover:border-spark-green/60 hover:shadow-soft" 
-      : "bg-muted/50 border-border"
-  }`}>
-    <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
-      text 
-        ? "bg-spark-green text-primary-foreground" 
-        : "bg-muted text-muted-foreground/50"
-    }`}>
+  <div className="flex items-center gap-4 p-3 rounded-xl border-2 transition-all duration-300 bg-card border-spark-green/30 hover:border-spark-green/60 hover:shadow-soft">
+    <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 bg-spark-green text-primary-foreground">
       <Icon size={20} />
     </div>
-    {text ? (
-      <span className="text-foreground font-medium">{text}</span>
-    ) : (
-      <div className="h-4 bg-muted rounded-full flex-1" />
-    )}
+    <span className="text-foreground font-medium">{text}</span>
   </div>
 );
 
 const MentorCard = ({ mentor }: { mentor: MentorData }) => (
   <div className="bg-gradient-card rounded-3xl p-6 md:p-8 shadow-card border border-spark-green/10 transition-all duration-300 hover:shadow-xl">
-    {/* Photo placeholder */}
+    {/* Photo */}
     <div className="flex justify-center mb-6">
-      <div className={`w-32 h-32 rounded-2xl border-4 flex items-center justify-center transition-all duration-300 ${
-        mentor.hasPhoto 
-          ? "border-spark-green/30 bg-spark-green/5" 
-          : "border-spark-green/20 bg-muted"
-      }`}>
-        {mentor.hasPhoto ? (
-          <span className="text-spark-green/50 font-medium">Photo</span>
-        ) : (
-          <span className="text-muted-foreground/50 font-medium">Photo</span>
-        )}
+      <div className="w-32 h-32 rounded-2xl border-4 border-spark-green/30 overflow-hidden transition-all duration-300 hover:border-spark-green/50">
+        <img 
+          src={mentor.photo} 
+          alt={`${mentor.name} - ${mentor.role}`}
+          className="w-full h-full object-cover"
+        />
       </div>
     </div>
     
