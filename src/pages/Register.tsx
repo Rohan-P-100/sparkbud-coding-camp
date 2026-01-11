@@ -106,7 +106,7 @@ const Register = () => {
                   
                   <div className="inline-flex items-center gap-2 bg-spark-orange/10 text-spark-orange px-4 py-2 rounded-full font-semibold">
                     <Calendar size={18} />
-                    Date: TBD
+                    Date: Jan 19
                   </div>
                 </div>
               </div>
